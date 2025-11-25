@@ -20,13 +20,11 @@ donde los comandos se ejecutan en bucle permanente hasta cerrar el video
 {"menu": ["create", "<nombre_del_menu>"]}
 este comando crea el contenedor del menu
 
-{"<nombre_del_menu>": [
-<comando>
-]}
-esto indica que el comando se va a ejecutar
+{"<nombre_del_menu>": [<comando>]}
+esto indica que el comando se va a ejecutar que va dentro de los de los []
 
 {"resolution": [<resolucion_eje_X>,<resolucion_eje_Y>]}
-con este comando define el tamaño de las cordenadas, estas no son pixeles, solo son cordenadas que indican cuanta definicion en las cordendas hay, esto para evitar los decimales
+con este comando define el tamaño de las coordenadas, estas no son pixeles, solo son coordenadas que indican cuanta definicion en las coordendas hay, esto para evitar los decimales
 
 {"image": [<create/edit>,<id_de_la_imagen_a_crear_o_editar>, "coordinates",<cordenada_eje_x_inicio>,<cordenada_eje_y_inicio>,<cordenada_eje_x_fin>,<cordenada_eje_y_fin>, "<ubicacion_de_la_imagen_dentro_del_contenedor>"]}
 este comando es para poner imagenes
