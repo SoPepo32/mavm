@@ -47,3 +47,17 @@ este comando es el unico (al escibir esto) que se ejcuta fuera de un comando tip
 las imagenes, botones y videos se pondran uno encima del otro dependiendo de cual este escrita su creacion primero (no se toma en cuenta la edicion para eso) si "x" comando se escribe antes que "z" comando (siempre y cuando sean imagenes, videos o botones, en caso contrario, por ejemplo sea un teleport se limpia la pantalla y se muestra el video/menu al que mando el teleport) "z" comando estara arriba de "x" comando en la visualizacion
 
 en el archivo de ejemplo las imagenes, videos y menus estan organizados dentro de carpetas, eso no es obligatorio, pero es recomendable
+
+
+archivo "metadata.json"
+contenido ejemplo:
+{
+    "mavm_version": "v.1.0.1",
+    "descripcion": {
+        "text": "example description",
+        "duration":3
+    }
+}
+
+"mavm_version" es la version de mavm con la que trabaja el archivo
+"descripcion" es la descripcion del archivo, datos que se mostraran al abrir el archivo junto al tiempo por el que se mostrara en segundos
