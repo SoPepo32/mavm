@@ -10,12 +10,12 @@ los comandos de los menus son:
 ]
 donde se ejecutan los comandos al iniciar el video
 
-despues est
+despues esta
 
 "loop":[
 <comandos>
 ]
-donde los comandos se ejecutan en bucle permanente hasta cerrar el video
+donde los comandos se ejecutan en bucle permanente hasta cerrar el video o cambiar de menu
 
 {"menu": ["create", "<nombre_del_menu>"]}
 este comando crea el contenedor del menu
