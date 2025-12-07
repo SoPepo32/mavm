@@ -3,7 +3,7 @@ el formato mavm es un contenedor de video basado en mkv y json capaz de contener
 el archivo por defecto de ejecucion es el start.json ubicado dentro del un mkv renombrado con la extencion .mavm (matroska video menu)
 
 
-los comandos de los menus son:
+los comandos de los menus son (cada qu escribas un comando debes poner todos los parametros a no se que se espesifique que el parametro el opcional):
 
 "start": [
 -comandos-
@@ -30,7 +30,7 @@ con este comando define el tamaño de las coordenadas, estas no son pixeles, sol
 este comando es para poner imagenes
 
 {"button": [-create/edit-,-id_del_boton_a_crear_o_editar-, "coordinates",-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-, "title",-titulo_del_boton_-, "color",[-color_rgb_rojo-,-color_rgb_verde-,-color_rgb_azul-], "command_click",-comando_a_ejecutar_al_hacer_click-], "command4selection",-comando_que_ejecutar_al_seleccionar-, "command4no_selection",-comando_que_ejecutar_al_dejar_de_seleccionar-}
-este comando es para crear botones que permiten ejecutar otro comando (o comandos si estan entre --> []) al hacerler click, al seleccionar y al dejar de seleccionar
+este comando es para crear botones que permiten ejecutar otro comando (o comandos si estan entre --> []) al hacerler click, al seleccionar y al dejar de seleccionar. Los parametros de  ""command_click",-comando_a_ejecutar_al_hacer_click-]", ""command4selection",-comando_que_ejecutar_al_seleccionar-" y ""command4no_selection",-comando_que_ejecutar_al_dejar_de_seleccionar-" son opcionales
 
 {"teleport":[-ubicacion_del_archivo_a_teletransportar]}
 el comando teleport cumple la funcion de teletrasnportarte a otro menu o a un video, si quieres que te teletransporte a mas de un video por dentro de los corchetes los lugares a los que quieres que te teletransporte en orden siendo el primer objeto puesto es el primer objeto al que te teletransporta y el ultimo objeto es el ultimo al que teletransporta
