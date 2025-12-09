@@ -1,5 +1,7 @@
 el formato mavm es un contenedor de video basado en mkv y json capaz de contener los archivos de menus y varios videos con sus pistas de audio y subtitulos
 
+reproductor para el formato: https://github.com/SoPepo32/reproductormavm
+
 el archivo por defecto de ejecucion es el start.json ubicado dentro del un mkv renombrado con la extencion .mavm (matroska video menu)
 
 
