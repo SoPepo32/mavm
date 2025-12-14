@@ -83,7 +83,7 @@ contenido ejemplo:
 
 
 
-## uso de empaquetador_mavm:
+## uso de creador_mavm:
 
 instala python (recomiendo python3.10 porque ese use para las pruebas)
 segundo instalas las depedencias del archivo "requirements_creador_mavm.txt"
