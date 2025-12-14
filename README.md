@@ -83,9 +83,8 @@ contenido ejemplo:
 
 
 
-## uso de creador_mavm.7z:
+## uso de empaquetador_mavm:
 
-primero extrae el contenido
 instala python (recomiendo python3.10 porque ese use para las pruebas)
 segundo instalas las depedencias del archivo "requirements_creador_mavm.txt"
 tercero crea los menus y archivo de metadata
