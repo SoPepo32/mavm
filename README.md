@@ -1,11 +1,13 @@
-el formato mavm es un contenedor de video basado en mkv y json capaz de contener los archivos de menus y varios videos con sus pistas de audio y subtitulos
+<h1>MaVM</h1>
 
-reproductor para el formato: https://github.com/SoPepo32/reproductormavm
+## el formato mavm es un contenedor de video basado en mkv y json capaz de contener los archivos de menus y varios videos con sus pistas de audio y subtitulos
+
+reproductor para el formato: [RreproductorMaVM](https://github.com/SoPepo32/reproductormavm)
 
 el archivo por defecto de ejecucion es el start.json ubicado dentro del un mkv renombrado con la extencion .mavm (matroska video menu)
 
 
-los comandos de los menus son (cada que escribas un comando debes poner todos los parametros a no se que se espesifique que el parametro el opcional):
+## los comandos de los menus son (cada que escribas un comando debes poner todos los parametros a no se que se espesifique que el parametro el opcional):
 
 "start": [
 -comandos-
@@ -63,7 +65,7 @@ este comando sirve para editar un texto
 
 las imagenes, botones y videos se pondran uno encima del otro dependiendo de cual este escrita su creacion primero (no se toma en cuenta la edicion para eso) si "x" comando se escribe antes que "z" comando (siempre y cuando sean imagenes, videos o botones, en caso contrario, por ejemplo sea un teleport se limpia la pantalla y se muestra el video/menu al que mando el teleport) "z" comando estara arriba de "x" comando en la visualizacion
 
-en el archivo de ejemplo las imagenes, videos y menus estan organizados dentro de una misma carpeta, puedes hacerlo distinto pero se te puede complicar el comando teleport
+## en el archivo de ejemplo las imagenes, videos y menus estan organizados dentro de una misma carpeta, puedes hacerlo distinto pero se te puede complicar el comando teleport
 
 
 archivo "metadata.json"
@@ -81,7 +83,7 @@ contenido ejemplo:
 
 
 
-uso de creador_mavm.7z:
+## uso de creador_mavm.7z:
 
 primero extrae el contenido
 instala python (recomiendo python3.10 porque ese use para las pruebas)
