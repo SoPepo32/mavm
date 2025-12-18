@@ -22,32 +22,32 @@ Then there is:
 ]
 where the commands are executed in a continuous loop until the video closes or the menu changes.
 
-{"menu": ["create", "-menu_name-"]}
+{"menu": ["create", -menu_name-]}
 This command creates the menu container.
 
-{"-menu_name-": [-command-]}
+{-menu_name-: [-command-]}
 This indicates that the command inside the square brackets [] will be executed.
 
 {"resolution": [-x_axis_resolution-,-y_axis_resolution-]}
 This command defines the size of the coordinates. These are not pixels; they are coordinates that indicate the level of detail in the coordinates, avoiding decimals.
 
-{"image": [-create/edit-,-id_of_the_image_to_create_or_edit-, "coordinates",-start_x_axis_coordinates-,-start_y_axis_coordinates-,-end_x_axis_coordinates-, "-image_location_within_the_container-"]}
+{"image": [-create/edit-,-id_of_the_image_to_create_or_edit-, "coordinates",-start_x_axis_coordinates-,-start_y_axis_coordinates-,-end_x_axis_coordinates-, -image_location_within_the_container-]}
 This command is for setting Images
 
-{"button": [-create/edit-,-id_of_the_button_to_create_or_edit-, "coordinates",-start_x_axis_coordinate-,-start_y_axis_coordinate-,-end_x_axis_coordinate-,-end_y_axis_coordinate-, "title",-button_title-, "color",[-red_rgb_color-,-green_rgb_color-,-blue_rgb_color-], "command_click",-command_to_execute_on_click-], "command4selection",-command_to_execute_on_selection-, "command4no_selection",-command_to_execute_on_de-selection-}
-This command is for creating buttons that allow you to execute another command (or commands if they are between --> []) when clicked. When selected and when deselected. The parameters ""command_click",-command_to_execute_on_click-]", ""command4selection",-command_to_execute_on_selection-" and ""command4no_selection",-command_to_execute_on_deselection-" are optional.
+{"button": [-create/edit-,-id_of_the_button_to_create_or_edit-, "coordinates",-start_x_axis_coordinate-,-start_y_axis_coordinate-,-end_x_axis_coordinate-,-end_y_axis_coordinate-, "title",-button_title-, "color",[-red_rgb_color-,-green_rgb_color-,-blue_rgb_color-], "command_click",[-command_to_execute_on_click-], "command4selection",-command_to_execute_on_selection-, "command4no_selection",-command_to_execute_on_de-selection-]}
+This command is for creating buttons that allow you to execute another command (or commands if they are between --> []) when clicked. When selected and when deselected. The parameters ""command_click",-command_to_execute_on_click-", ""command4selection",-command_to_execute_on_selection- and ""command4no_selection",-command_to_execute_on_deselection- are optional.
 
 {"teleport":[-location_of_file_to_teleport]}
 The teleport command teleports you to another menu or a video. If you want to teleport to more than one video, place the locations you want to teleport to inside the brackets, in order. The first item listed is the first item you are teleported to, and the last item is the last item you are teleported to.
 
-{"video":[-create/edit-,-id_of_video_to_create_or_edit-, "coordinates", -start_x_coordinate-, -start_y_coordinate-, -end_x_coordinate-, -end_y_coordinate-, -video_location_within_container-]}
+{"video":[-create/edit-,-id_of_video_to_create_or_edit-, "coordinates", -start_x_coordinate-, -start_y_coordinate-, -end_x_coordinate-, -end_y_coordinate-, "video_path",-video_location_within_container-]}
 This command allows you to place videos within a menu that will start automatically when the menu is accessed. It won't wait for the video to finish before executing the next command; it will execute both simultaneously.
 
-{"video":["edit", -video_id-, "restart"]}
-This command allows you to restart the video. This command cannot be executed again with the same video until the video has finished, because you can only restart a video that has already finished, regardless of how long ago it ended.
+{"video":[-create/edit-,-id_of_video_to_create_or_edit-, "coordinates",-start_x_axis_coordinate-,-start_y_axis_coordinate-,-end_x_axis_coordinate-,-end_y_axis_coordinate-, "video_path",-location_of_video_within_the_container-]}
+This command allows you to place videos within a menu that will start automatically when you enter the menu. It won't wait for the video to finish before executing the next command; it will run simultaneously.
 
 {"time": ["wait", -wait_time-, -seconds/minutes/hours-]}
-This command is the only one (when written) that executes outside of a command like "{"-menu_name-": [-command-]}" is used to wait "x" amount of time until the next command.
+This command is the only one (when written) that executes outside of a command like "{-menu_name-: [-command-]}" is used to wait "x" amount of time until the next command.
 
 {"button_default":[-button_id-]}
 This command allows you to set a button as the default button selected when entering the menu.
@@ -121,32 +121,32 @@ despues esta
 ]
 donde los comandos se ejecutan en bucle permanente hasta cerrar el video o cambiar el menu
 
-{"menu": ["create", "-nombre_del_menu-"]}
+{"menu": ["create", -nombre_del_menu-]}
 este comando crea el contenedor del menu
 
-{"-nombre_del_menu-": [-comando-]}
+{-nombre_del_menu-: [-comando-]}
 esto indica que el comando se va a ejecutar que va dentro de los de los []
 
 {"resolution": [-resolucion_eje_X-,-resolucion_eje_Y-]}
 con este comando define el tamaño de las coordenadas, estas no son pixeles, solo son coordenadas que indican cuanta definicion en las coordendas hay, esto para evitar los decimales
 
-{"image": [-create/edit-,-id_de_la_imagen_a_crear_o_editar-, "coordinates",-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-, "-ubicacion_de_la_imagen_dentro_del_contenedor-"]}
+{"image": [-create/edit-,-id_de_la_imagen_a_crear_o_editar-, "coordinates",-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-, -ubicacion_de_la_imagen_dentro_del_contenedor-]}
 este comando es para poner imagenes
 
-{"button": [-create/edit-,-id_del_boton_a_crear_o_editar-, "coordinates",-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-, "title",-titulo_del_boton_-, "color",[-color_rgb_rojo-,-color_rgb_verde-,-color_rgb_azul-], "command_click",-comando_a_ejecutar_al_hacer_click-], "command4selection",-comando_que_ejecutar_al_seleccionar-, "command4no_selection",-comando_que_ejecutar_al_dejar_de_seleccionar-}
-este comando es para crear botones que permiten ejecutar otro comando (o comandos si estan entre --> []) al hacerler click, al seleccionar y al dejar de seleccionar. Los parametros de  ""command_click",-comando_a_ejecutar_al_hacer_click-]", ""command4selection",-comando_que_ejecutar_al_seleccionar-" y ""command4no_selection",-comando_que_ejecutar_al_dejar_de_seleccionar-" son opcionales
+{"button": [-create/edit-,-id_of_the_button_to_create_or_edit-, "coordinates",-inicio_x_coordenada-,-inicio_y_coordenadas-,-final_x_coordenadas-,-final_y_coordenadas-, -title/image-,-title_del_boton/ubicacion_de_la_imagen_en_el_contenedor-, "color",[-red_rgb_color-,-green_rgb_color-,-blue_rgb_color-], "command_click",-command_to_execute_on_click-], "command4selection",-command_to_execute_on_selection-, "command4no_selection",-command_to_execute_on_deletion-}
+Este comando permite crear botones que permiten ejecutar otro comando (o comandos si están entre --> []) al hacer clic, al seleccionar y al deseleccionar. Los parámetros "command_click", "command_to_execute_on_click", "command4selection", "command_to_execute_on_selection" y "command4no_selection", "command_to_execute_on_deselection" son opcionales.
 
 {"teleport":[-ubicacion_del_archivo_a_teletransportar]}
 el comando teleport cumple la funcion de teletrasnportarte a otro menu o a un video, si quieres que te teletransporte a mas de un video por dentro de los corchetes los lugares a los que quieres que te teletransporte en orden siendo el primer objeto puesto es el primer objeto al que te teletransporta y el ultimo objeto es el ultimo al que teletransporta
 
-{"video":[-create/edit-,-id_del_video_a_crear_o_editar-, "coordinates",-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-, -ubicacion_del_video_dentro_del_contenedor-]}
+{"video":[-create/edit-,-id_del_video_a_crear_o_editar-, "coordinates",-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-, "video_path",-ubicacion_del_video_dentro_del_contenedor-]}
 este comando permite poner videos dentro de un menu que se iniciaran automaticamente al entrar al menu, no se esperara a que termine el video para ejecutar el siguiente comando, se hara a la vez
 
 {"video":["edit",-id_del_video-, "restart"]}
 este comando permite volver a iniciar el video, este comando no se puede volver a ejecutar con el mismo video hasta que el video haya terminado, porqué solo se puede resetear un video que ya haya terminado, no importa hace cuanto termino
 
 {"time": ["wait",-tiempo_a_esperar-,-seconds/minutes/hours-]}
-este comando es el unico (al escibir esto) que se ejcuta fuera de un comando tipo "{"-nombre_del_menu-": [-comando-]}" sirve para esperar "x" tiempo hasta el siguiente comando
+este comando es el unico (al escibir esto) que se ejcuta fuera de un comando tipo "{-nombre_del_menu-: [-comando-]}" sirve para esperar "x" tiempo hasta el siguiente comando
 
 {"button_default":[-id_del_boton-]}
 este comando permite establecer un boton como el por defecto seleccionado al entrar al menu
@@ -197,4 +197,4 @@ python3.10 creador_mavm.py --file_e -archivo_base- --files_r -archivo_txt_con_la
 
 nombracion de versiones:
 
-v.-version_de_cambios_grandes-.-version_de_cambios_pequeños/medianos-.-correccion_de_errores--correciones_del_README.md_el_video_de_ejemplo(video_de_ejemplo.mavm)_o_creador_mavm_no_se_incluye_en_"mavm_version"_de_"metadata.json"-
+v.-version_de_cambios_grandes-.-version_de_cambios_pequeños/medianos-.-correccion_de_errores--correciones_del_README.md_el_video_de_ejemplo(video_de_ejemplo.mavm)_o_creador_mavm_no_se_incluye_en_"mavm_version"_de_"metadata.json-
