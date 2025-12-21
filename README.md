@@ -96,7 +96,7 @@ Fourth, create the file that specifies the file locations, separating them with 
 Fifth, use the Python script to combine everything.
 
 Script usage:
-python3.10 creator_mavm.py --file_e -base_file- --files_r -txt_file_with_the_file_list- --file_out -output_file_.mavm-
+python3.10 mavm_packager.py --file_e -base_file- --files_r -txt_file_with_the_file_list- --file_out -output_file_.mavm-
 
 python3.10 mavm_packager.py -h
 For more information
@@ -205,7 +205,7 @@ Cuarto, crea el archivo que especifica las ubicaciones de los archivos, separán
 Quinto, usa el script de Python para combinar todo.
 
 uso del script:
-python3.10 creador_mavm.py --files_r -archivo_txt_con_la_lista_de_archivos- --file_out -archiv_de_salida_.mavm-
+python3.10 mavm_packager.py --files_r -archivo_txt_con_la_lista_de_archivos- --file_out -archiv_de_salida_.mavm-
 
 python3.10 mavm_packager.py -h
 Para más información
