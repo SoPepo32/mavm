@@ -88,16 +88,18 @@ Example content:
 "mavm_version" is the MAVM version the file uses.
 "description" is the file description, the data that will be displayed when the file is opened, along with the duration in seconds it will be displayed.
 
-## Using creator_mavm:
-
-Install Python (I recommend Python 3.10 because that's what I used for testing).
-Second, install the dependencies from the "requirements_creador_mavm.txt" file.
+## Using mavm_packager:
+First, install Python (I recommend Python 3.10 because that's what I used for testing).
+Second, install the dependencies listed in the "requirements.txt" file.
 Third, create the menus and metadata file.
-Fourth, create the file I specified. The file locations are differentiated by a line break.
-Fifth, use the Python script to combine everything. It's important to have an MKV video file; its content isn't crucial since it won't be used during playback.
+Fourth, create the file that specifies the file locations, separating them with a line break.
+Fifth, use the Python script to combine everything.
 
 Script usage:
 python3.10 creator_mavm.py --file_e -base_file- --files_r -txt_file_with_the_file_list- --file_out -output_file_.mavm-
+
+python3.10 mavm_packager.py -h
+For more information
 
 Version naming:
 
@@ -194,17 +196,19 @@ contenido ejemplo:
 
 
 
-## uso de creador_mavm:
+## Usando mavm_packager:
 
-instala python (recomiendo python3.10 porque ese use para las pruebas)
-segundo instalas las depedencias del archivo "requirements_creador_mavm.txt"
-tercero crea los menus y archivo de metadata
-cuarto crea el archivo que indique las ubicaciones de los archivos diferenciando los archivos por un salto de linea
-quinto usar el script de python para conbinar todo, importante tener un video mkv, no importa mucho su contenido ya que este no se va a usar al reproducir
+Primero, instala Python (recomiendo Python 3.10 porque es el que usé para las pruebas).
+Segundo, instala las dependencias listadas en el archivo "requirements.txt".
+Tercero, crea el archivo de menús y metadatos.
+Cuarto, crea el archivo que especifica las ubicaciones de los archivos, separándolos con un salto de línea.
+Quinto, usa el script de Python para combinar todo.
 
 uso del script:
-python3.10 creador_mavm.py --file_e -archivo_base- --files_r -archivo_txt_con_la_lista_de_archivos- --file_out -archiv_de_salida_.mavm-
+python3.10 creador_mavm.py --files_r -archivo_txt_con_la_lista_de_archivos- --file_out -archiv_de_salida_.mavm-
 
+python3.10 mavm_packager.py -h
+Para más información
 
 nombracion de versiones:
 
