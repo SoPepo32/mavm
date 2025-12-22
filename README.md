@@ -6,6 +6,8 @@
 
 Player for the format: [SoPepo32/MaVMPlayer](https://github.com/SoPepo32/reproductormavm)
 
+link for the [FMaVM](https://github.com/SoPepo32/fmavm) repository
+
 The default execution file is start.json, located within the file with the .mavm extension (Matroska Video Menu).
 
 ## .mavm file format:
@@ -113,6 +115,8 @@ All content in this repository is under GPL-3.0.
 ## el formato mavm es un contenedor de video basado en mkv y json capaz de contener los archivos de menus y varios videos con sus pistas de audio y subtitulos
 
 reproductor para el formato: [RreproductorMaVM](https://github.com/SoPepo32/reproductormavm)
+
+Enlace para el repositorio [FMaVM](https://github.com/SoPepo32/fmavm)
 
 El archivo de ejecución predeterminado es start.json, ubicado dentro del archivo con la extensión .mavm (Matroska Video Menu).
 
