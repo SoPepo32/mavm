@@ -81,10 +81,10 @@ Images, buttons, and videos will be placed one on top of the other depending on 
 File "metadata.json"
 
 Example content:
-
+```metadata.json
 {
 
-    "mavm_version": "v.2.0.0",
+    "mavm_version": "v.3.3.0",
 
     "description": {
 
@@ -95,6 +95,7 @@ Example content:
     }
 
 }
+```
 
 "mavm_version" is the MAVM version the file uses.
 "description" is the file description, the data that will be displayed when the file is opened, along with the duration in seconds it will be displayed.
@@ -202,10 +203,10 @@ las imagenes, botones y videos se pondran uno encima del otro dependiendo de cua
 archivo "metadata.json"
 
 contenido ejemplo:
-
+```metadata.json
 {
 
-    "mavm_version": "v.2.0.0",
+    "mavm_version": "v.3.3.0",
 
     "description": {
 
@@ -216,6 +217,7 @@ contenido ejemplo:
     }
 
 }
+```
 
 "mavm_version" es la version de mavm con la que trabaja el archivo
 "descripcion" es la descripcion del archivo, datos que se mostraran al abrir el archivo junto al tiempo por el que se mostrara en segundos
