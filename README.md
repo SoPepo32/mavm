@@ -83,17 +83,11 @@ File "metadata.json"
 Example content:
 ```metadata.json
 {
-
     "mavm_version": "v.3.3.0",
-
     "description": {
-
         "text": "example description",
-
         "duration": 3
-        
     }
-
 }
 ```
 
@@ -205,17 +199,11 @@ archivo "metadata.json"
 contenido ejemplo:
 ```metadata.json
 {
-
     "mavm_version": "v.3.3.0",
-
     "description": {
-
         "text": "example description",
-
         "duration": 3
-        
     }
-
 }
 ```
 
