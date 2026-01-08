@@ -54,8 +54,8 @@ This command allows you to place videos within a menu that will start automatica
 {"video":[-create/edit-,-id_of_video_to_create_or_edit-, "coordinates",-start_x_axis_coordinate-,-start_y_axis_coordinate-,-end_x_axis_coordinate-,-end_y_axis_coordinate-, "video_path",-location_of_video_within_the_container-]}
 This command allows you to place videos within a menu that will start automatically when you enter the menu. It won't wait for the video to finish before executing the next command; it will run simultaneously.
 
-{"time": ["wait", -wait_time-, -seconds/minutes/hours-]}
-This command is the only one (when written) that executes outside of a command like "{-menu_name-: [-command-]}" is used to wait "x" amount of time until the next command.
+{"time": ["wait",-wait_time-,-seconds/minutes/hours-]}
+This command is the only one (when I wrote this, it no longer is) that executes outside of a command like "{-menu_name-: [-command-]}" It is used to wait "x" time until the next command
 
 {"button_default":[-button_id-]}
 This command allows you to set a button as the default button selected when entering the menu.
@@ -72,8 +72,38 @@ This command is used to create text.
 {"text":["edit", -id_of_text_to_edit- "coordinates", -start_x_axis_coordinates-, -start_y_axis_coordinates-, -end_x_axis_coordinates-, -end_y_axis_coordinates-, "text", -text-]}
 This command is used to edit text.
 
-{"ebook": ["create/edit", -page_id-, "epub_path", -epub_name_with_the_extension-, "page", -episode_of_epub_to_import-, "coordinates", [ -start_x_coordinate-, -start_y_coordinate-, -end_x_coordinate-, -end_y_coordinate-]]}
-This command allows you to import a page from an epub and display it as an image in the menu.
+{"ebook": ["create/edit", -page_id-, "epub_path", -epub_name_with_the_extension-, "page", -epub_page_to_import-, "coordinates", [ -start_x_coordinate-, -start_y_coordinate-, -end_x_coordinate-, -end_y_coordinate-]]}
+This command allows you to import a page from an epub and place it as an image in the menu.
+
+{"script": ["create", -script_name-]}
+This command allows you to create a script within a menu and is written without {-menu_name-: [-command-]}, just like the time command.
+
+## Let's move on to script commands (each time you write a command you must include all parameters unless it is specified that the parameter is optional):
+
+(From here on, commands are written with {-script_name-: [{-command-}]})
+
+{"variable": ["create", -variable_id-, "content", -variable_content-]}
+With this command you can create a variable with its default value. Examples of possible variable contents: list, [0,1,3,1,-1,"hello:D"]; list of lists, [["hello:D",1],1,"hello:D"]; number, 137 and text, "hello:D"
+
+{"script2":[{"variable:":["insert_value", -id_of_the_variable-]}]}
+With this command you can insert the value of a variable as a parameter.
+
+{"variable": ["edit", -id_of_the_variable-, "content", [{"script2":[{"variable:":["insert_value", "num"]}]}, "-", [-1, "+", 0, "*", 0]]]}
+With this command you can edit the value of a variable and insert equations as shown there. The equation it's equivalent to is {"script2":[{"variable:":["insert_value", "num"]}]} - (-1 + 0*0), which is simply adding 1 since 0*0 is 0, -1 + 0 is -1, and - (-1) is +1. I only included that as an example. Many calculations, and yes, division is indicated with "/"
+
+{"range": ["starting_value", -starting_value of the range-, "final_value", -final_value of the range-, "definition", -definition_value-, "output_variable", -output_variable-]}
+This command allows you to store values ​​between two numbers in a variable. The definition is determined by the "definition" parameter, and the direction (whether to start with the highest or lowest value) is indicated with a negative number if it's from largest to smallest and with a positive number if it's from smallest to largest. "starting_value" should contain the starting value of the range, not the smallest.
+
+{"folder_contents": ["folder", -folder_to_read_contents-, "output_variable", -output_variable-]}
+This command allows you to obtain The contents of the project's main folder (using "/" for the "folder" parameter) or a folder within a .tar file (using the .tar logic defined later) are then placed into a previously defined variable as a list.
+
+{"for": [["temporary_variable_for_output", "-variable_temporary", "content_list_variable", "-list_of_content_to_pass_through_the_temporary_variable-], [-commands_to_execute]]}
+This command is the classic for loop. You define the name of the temporary variable (which doesn't need to be predefined), the variable containing the list to be passed, and the commands to execute.
+
+{"if": [-variable_a-, "-type_of_comparison-", "variable_b-", "true", "-command_to_execute-", "false", "-command_to_execute-]}
+This command is the conditional statement, allowing you to determine if a variable is true ("=="), false, or not. The `!="` operator determines whether a condition is greater than (>), less than (<), greater than or equal to (>=), or less than or equal to (<=") another variable. A command is executed if the condition is met (the `true` parameter) or false if it is not. If you don't want anything to be executed if the condition is met or not, use `["ignore"]` as the parameter for whether the condition is met or not (depending on your case). If you want more than one command to be executed if the condition is met or not, you must put all the commands inside square brackets.
+
+## We finish with the commands
 
 Images, buttons, and videos will be placed one on top of the other depending on which one was created first (editing is not taken into account for this). If command "x" is written before command "z" (as long as they are images, videos, buttons, text, ebooks, etc., otherwise, for example, if it's a teleport, the screen is cleared and the video/menu to which the teleport sends is displayed). The "z" command will be above the "x" command in the display.
 
@@ -89,7 +119,7 @@ Example content:
 
 {
 
-    "mavm_version": "v.2.0.0",
+    "mavm_version": "v.4.0.0",
 
     "description": {
 
@@ -166,7 +196,7 @@ este comando permite poner videos dentro de un menu que se iniciaran automaticam
 este comando permite volver a iniciar el video, este comando no se puede volver a ejecutar con el mismo video hasta que el video haya terminado, porqué solo se puede resetear un video que ya haya terminado, no importa hace cuanto termino
 
 {"time": ["wait",-tiempo_a_esperar-,-seconds/minutes/hours-]}
-este comando es el unico (al escibir esto) que se ejcuta fuera de un comando tipo "{-nombre_del_menu-: [-comando-]}" sirve para esperar "x" tiempo hasta el siguiente comando
+este comando es el unico (cuando escribi esto, ahora ya no) que se ejcuta fuera de un comando tipo "{-nombre_del_menu-: [-comando-]}" sirve para esperar "x" tiempo hasta el siguiente comando
 
 {"button_default":[-id_del_boton-]}
 este comando permite establecer un boton como el por defecto seleccionado al entrar al menu
@@ -183,8 +213,38 @@ este comando sirve para crear un texto
 {"text":["edit",-id_del_texto_a_editar- "coordinates",-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-, "text",-texto-]}
 este comando sirve para editar un texto
 
-{"ebook": ["create/edit",-id_de_la_pagina-, "epub_path",-nombre_del_epub_con_la_extencion-, "page",-apitulo_del_epub_a_importar-, "coordinates",[-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-]]}
+{"ebook": ["create/edit",-id_de_la_pagina-, "epub_path",-nombre_del_epub_con_la_extencion-, "page",-pagina_del_epub_a_importar-, "coordinates",[-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-]]}
 este comando permite importar una pagina de un epub y ponerla como una imagen en el menu
+
+{"script": ["create", -nombre_del_script-]}
+este comando permite crear un script dentro de un menu y se pone sin {-nombre_del_menu-: [-comando-]} al igual que el comando time
+
+## pasamos a los comandos de los scripts (cada que escribas un comando debes poner todos los parametros a no ser que se especifique que el parametro es opcional):
+
+(a partir de aqui los comandos se escriben con {-nombre_del_script-: [{-comando-}]})
+
+{"variable": ["craate",-id_de_la_variable-, "content",-contenido_de_la_variable-]}
+con este comando puedes crear una variable con su valor por defecto, ejemplos de contenidos que puede tener una variable; lista, [0,1,3,1,-1,"hola:D"]; lista de listas, [["hola:D",1],1,"hola:D"]; numero, 137 y texto, "hola:D"
+
+{"script2":[{"variable:":["insert_value", -id_de_la_variable-]}]}
+con este comando puedes insertar el valor de una variable como parametro
+
+{"variable": ["edit", -id_de_la_variable-, "content", [{"script2":[{"variable:":["insert_value", "num"]}]}, "-", [-1, "+", 0, "*", 0]]]}
+con este comando puedes editar el valor de una variable, y meter ecuaciones como se muestra ahi, la equacion a la que quivale es {"script2":[{"variable:":["insert_value", "num"]}]} - (-1 + 0*0) que es resumidamente sumarle 1 ya que el 0*0 es 0 -1 + 0 es -1 y - (-1) es +1 solo puse eso para poner ejemplos de muchos calculos, y si, la divicion se pone con "/"
+
+{"range": ["starting_value",-valor_de_inicio_del_rango-, "final_value",-valor_de_final_del_rango-, "definition",-valor_de_la_definicion-, "output_variable",-variable_de_salida-]}
+este comando permite poner los valor entre 2 numero en una variable, la definicion definida por el parametro "definition" y el sentido (si se emnpieza por el mas alto o el mas bajo) se indica con un numero negativo si es de mas grande a mas pequeño y con numero postivo si es de numero mas pequeño a mas grande ponidose en "starting_value" el valor con el que empieza el rango y no el mas pequeño
+
+{"folder_contents": ["folder",-carpeta_a_leer_el_contenido-, "output_variable",-variable_de_salida-]}
+este comando permite obtener el contenido de la carpeta principal del proyecto (poniendo "/" para el parametro "folder") o una carpeta dentro de un .tar (usando la logica de un .tar definida mas adelante) y ponerlo en una variable praviamente definida como lista
+
+{"for": [["temporary_variable_for_output",-variable_temporal, "content_list_variable",-lista_del_contenido_a_pasar_por_la_variable_temporal-],[-comandos_a_ejecutar]]}
+este comando es el clasico bucle for, estableces el nombre de la variable temporal (no que no hay que predefinir antes), la variable con la lista a pasar y los comandos a ejecutar
+
+{"if": [-variable_a-,-tipo_de_comparacion-,-variable_b-, "true",-comando_a_ejecutar-, "false",-comando_a_ejecutar-]}
+este comando es el condicional pudiendo determinar si una variable es ("==), no es "!=", o es mayor (">"), menor "(<"), mayor o igual (">=) o menor o igual ("<=") a otra variable y ejecutando un comando si se cumple (el parametro "true") o si no se cumple (el parametro "false") si no quieres que se ejcute nada en el caso de que se cumpla y/o no se cumpla la condicion pon un ["ignore"] como parametro de si se cumple o no se cumple (dependiendo tu caso) y si quieres que se ejcute mas de un comando si se cumple o no se cumple la condicion debes poner todos los comandos dentro de un []
+
+## finalizamos con los comandos
 
 las imagenes, botones y videos se pondran uno encima del otro dependiendo de cual este escrita su creacion primero (no se toma en cuenta la edicion para eso) si "x" comando se escribe antes que "z" comando (siempre y cuando sean imagenes, videos, botones, texto, ebook, etc, en caso contrario, por ejemplo sea un teleport se limpia la pantalla y se muestra el video/menu al que mando el teleport) "z" comando estara arriba de "x" comando en la visualizacion
 
@@ -201,7 +261,7 @@ contenido ejemplo:
 
 {
 
-    "mavm_version": "v.2.0.0",
+    "mavm_version": "v.4.0.0",
 
     "description": {
 
