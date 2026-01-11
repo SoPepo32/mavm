@@ -93,7 +93,12 @@ for exponentiation,
 
 for example, 3 squared "3**2"
 
-or 3 cubed "3**3". For square root, use "//2", and for any other root, replace the 2 with its corresponding number. For example, cube root would be "//3". For square root, the square root of 9 would be 9//2. For division, use /, with the number being divided on the left and the divisor on the right. For multiplication, use *, using the same logic. For addition, use +. For subtraction, use -. And those are all the calculation symbols. IMPORTANT! The number used and the symbol are not in the same string; they are separated. For example, [9, "//", 2], not ["9//2"]. The same applies to exponentiation, division, multiplication, addition, and subtraction; the numbers/variables are separated from the symbols.
+or 3 cubed "3**3". For square root, use "//2", and for any other root, replace the 2 with its corresponding number. For example, cube root would be "//3". For square root, the square root of 9 would be 9//2. For division, use /, with the number being divided on the left and the divisor on the right. For multiplication, use *, using the same logic. For addition, use +. For subtraction, use -. And those are all the calculation symbols.
+
+IMPORTANT! The number used and the symbol are not in the same string; they are separated. For example, [9, "//", 2], not ["9//2"]. The same applies to exponentiation, division, multiplication, addition, and subtraction; the numbers/variables are separated from the symbols.
+
+IMPORTANT! If you want to create a list with predefined values, you must use double square brackets [[-values-]], otherwise it will be a calculation. Only if you initialize without predefined values ​​(i.e., an empty list) can you use brackets [], but [[]] is recommended for consistency in the menu code.
+
 {"range": ["starting_value", -starting_value of the range-, "final_value", -final_value of the range-, "definition", -definition_value-, "output_variable", -output_variable-]}
 This command allows you to store values ​​between two numbers in a variable. The definition is determined by the "definition" parameter, and the direction (whether to start with the highest or lowest value) is indicated with a negative number if it's from largest to smallest and with a positive number if it's from smallest to largest. "starting_value" should contain the starting value of the range, not the smallest.
 
@@ -238,6 +243,7 @@ siendo 3 al cuadrado "3**2" o
  para sumar +
  para restar -
  y esos son todos los simbolos de calculos
+
  IMPORTANTE! el numero que se usa y el simbolo no van en la misma cadena de texto, van separados, ejemplo [9, "//", 2], no ["9//2"]. igual con el elevado, division, multiplicacion, suma y resta; los numeros/variables van separadas de los simbolos
 
  IMPORTANTE! si quieres crear una lista con valores predefinidos hay que ponerla como [[-valores-]] doble corchete, porque si no lo pones asi seria un calculo, solo en caso de inicializar sin valores predefinidos o sea lista vacia puedes poner [] pero se recomienda [[]] para consistencia en el codigo del menu
