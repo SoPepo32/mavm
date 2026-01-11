@@ -240,6 +240,8 @@ siendo 3 al cuadrado "3**2" o
  y esos son todos los simbolos de calculos
  IMPORTANTE! el numero que se usa y el simbolo no van en la misma cadena de texto, van separados, ejemplo [9, "//", 2], no ["9//2"]. igual con el elevado, division, multiplicacion, suma y resta; los numeros/variables van separadas de los simbolos
 
+ IMPORTANTE! si quieres crear una lista con valores predefinidos hay que ponerla como [[-valores-]] doble corchete, porque si no lo pones asi seria un calculo, solo en caso de inicializar sin valores predefinidos o sea lista vacia puedes poner [] pero se recomienda [[]] para consistencia en el codigo del menu
+
 {"range": ["starting_value",-valor_de_inicio_del_rango-, "final_value",-valor_de_final_del_rango-, "definition",-valor_de_la_definicion-, "output_variable",-variable_de_salida-]}
 este comando permite poner los valor entre 2 numero en una variable, la definicion definida por el parametro "definition" y el sentido (si se emnpieza por el mas alto o el mas bajo) se indica con un numero negativo si es de mas grande a mas pequeño y con numero postivo si es de numero mas pequeño a mas grande ponidose en "starting_value" el valor con el que empieza el rango y no el mas pequeño
 
