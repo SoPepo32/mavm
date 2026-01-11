@@ -85,12 +85,15 @@ This command allows you to create a script within a menu and is written without 
 {"variable": ["create", -variable_id-, "content", -variable_content-]}
 With this command you can create a variable with its default value. Examples of possible variable contents: list, [0,1,3,1,-1,"hello:D"]; list of lists, [["hello:D",1],1,"hello:D"]; number, 137 and text, "hello:D"
 
-{"script2":[{"variable:":["insert_value", -id_of_the_variable-]}]}
+{"variable:":["insert_value", -id_of_the_variable-]}
 With this command you can insert the value of a variable as a parameter.
+{"variable": ["edit", -id_de_la_variable-, "content", [{"script2":[{"variable:":["insert_value", "num"]}]}, "-", [-1, "+", 0, "*", 0]]]}
+With this command you can edit the value of a variable and insert equations as shown there. The equation it's equivalent to is {"script2":[{"variable:":["insert_value", "num"]}]} - (-1 + 0*0), which is simply adding 1 since 0*0 is 0, -1 + 0 is -1, and - (-1) is +1. I only included that to give examples of many calculations, and yes, division is indicated with "/". The available symbols are "**"
+for exponentiation,
 
-{"variable": ["edit", -id_of_the_variable-, "content", [{"script2":[{"variable:":["insert_value", "num"]}]}, "-", [-1, "+", 0, "*", 0]]]}
-With this command you can edit the value of a variable and insert equations as shown there. The equation it's equivalent to is {"script2":[{"variable:":["insert_value", "num"]}]} - (-1 + 0*0), which is simply adding 1 since 0*0 is 0, -1 + 0 is -1, and - (-1) is +1. I only included that as an example. Many calculations, and yes, division is indicated with "/"
+for example, 3 squared "3**2"
 
+or 3 cubed "3**3". For square root, use "//2", and for any other root, replace the 2 with its corresponding number. For example, cube root would be "//3". For square root, the square root of 9 would be 9//2. For division, use /, with the number being divided on the left and the divisor on the right. For multiplication, use *, using the same logic. For addition, use +. For subtraction, use -. And those are all the calculation symbols. IMPORTANT! The number used and the symbol are not in the same string; they are separated. For example, [9, "//", 2], not ["9//2"]. The same applies to exponentiation, division, multiplication, addition, and subtraction; the numbers/variables are separated from the symbols.
 {"range": ["starting_value", -starting_value of the range-, "final_value", -final_value of the range-, "definition", -definition_value-, "output_variable", -output_variable-]}
 This command allows you to store values ​​between two numbers in a variable. The definition is determined by the "definition" parameter, and the direction (whether to start with the highest or lowest value) is indicated with a negative number if it's from largest to smallest and with a positive number if it's from smallest to largest. "starting_value" should contain the starting value of the range, not the smallest.
 
@@ -116,20 +119,15 @@ To import a file from a .tar archive, you must type the .tar archive name follow
 File "metadata.json"
 
 Example content:
-
+```json
 {
-
     "mavm_version": "v.4.0.0",
-
     "description": {
-
-        "text": "example description",
-
+        "text": "example description"
         "duration": 3
-        
     }
-
 }
+```
 
 "mavm_version" is the MAVM version the file uses.
 "description" is the file description, the data that will be displayed when the file is opened, along with the duration in seconds it will be displayed.
@@ -226,11 +224,21 @@ este comando permite crear un script dentro de un menu y se pone sin {-nombre_de
 {"variable": ["craate",-id_de_la_variable-, "content",-contenido_de_la_variable-]}
 con este comando puedes crear una variable con su valor por defecto, ejemplos de contenidos que puede tener una variable; lista, [0,1,3,1,-1,"hola:D"]; lista de listas, [["hola:D",1],1,"hola:D"]; numero, 137 y texto, "hola:D"
 
-{"script2":[{"variable:":["insert_value", -id_de_la_variable-]}]}
+{"variable:":["insert_value", -id_de_la_variable-]}
 con este comando puedes insertar el valor de una variable como parametro
 
 {"variable": ["edit", -id_de_la_variable-, "content", [{"script2":[{"variable:":["insert_value", "num"]}]}, "-", [-1, "+", 0, "*", 0]]]}
-con este comando puedes editar el valor de una variable, y meter ecuaciones como se muestra ahi, la equacion a la que quivale es {"script2":[{"variable:":["insert_value", "num"]}]} - (-1 + 0*0) que es resumidamente sumarle 1 ya que el 0*0 es 0 -1 + 0 es -1 y - (-1) es +1 solo puse eso para poner ejemplos de muchos calculos, y si, la divicion se pone con "/"
+con este comando puedes editar el valor de una variable, y meter ecuaciones como se muestra ahi, la equacion a la que quivale es {"script2":[{"variable:":["insert_value", "num"]}]} - (-1 + 0*0) que es resumidamente sumarle 1 ya que el 0*0 es 0 -1 + 0 es -1 y - (-1) es +1 solo puse eso para poner ejemplos de muchos calculos, y si, la divicion se pone con "/". Ls simbolos disponibles son "**" para elevado,
+
+siendo 3 al cuadrado "3**2" o
+
+3 al cubo "3**3" para raiz cuadrada se usa "//2" y para cualquier otra raiz se cambia el 2 por su numero correspondiente ejemplo raiz cubica seria "//3" ejemplo de uso para raiz cuadrada raiz cuadrada de 9 se usaria 9//2
+ para  division es con / siendo el numeor dividido a la izquierda y el divisor a la derecha
+ para multiplicar se usa * misma logica
+ para sumar +
+ para restar -
+ y esos son todos los simbolos de calculos
+ IMPORTANTE! el numero que se usa y el simbolo no van en la misma cadena de texto, van separados, ejemplo [9, "//", 2], no ["9//2"]. igual con el elevado, division, multiplicacion, suma y resta; los numeros/variables van separadas de los simbolos
 
 {"range": ["starting_value",-valor_de_inicio_del_rango-, "final_value",-valor_de_final_del_rango-, "definition",-valor_de_la_definicion-, "output_variable",-variable_de_salida-]}
 este comando permite poner los valor entre 2 numero en una variable, la definicion definida por el parametro "definition" y el sentido (si se emnpieza por el mas alto o el mas bajo) se indica con un numero negativo si es de mas grande a mas pequeño y con numero postivo si es de numero mas pequeño a mas grande ponidose en "starting_value" el valor con el que empieza el rango y no el mas pequeño
@@ -258,20 +266,15 @@ Para importar un archivo desde un archivo .tar, debe escribir el nombre del arch
 archivo "metadata.json"
 
 contenido ejemplo:
-
+```json
 {
-
     "mavm_version": "v.4.0.0",
-
     "description": {
-
-        "text": "example description",
-
+        "text": "example description"
         "duration": 3
-        
     }
-
 }
+```
 
 "mavm_version" es la version de mavm con la que trabaja el archivo
 "descripcion" es la descripcion del archivo, datos que se mostraran al abrir el archivo junto al tiempo por el que se mostrara en segundos
