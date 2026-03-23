@@ -30,6 +30,13 @@ Then there is:
 ]
 where the commands are executed in a continuous loop until the video closes or the menu changes.
 
+"functions": {
+    "-function_name-": [
+        -commands-
+    ]
+}
+To create functions
+
 {"menu": ["create", -menu_name-]}
 This command creates the menu container.
 
@@ -111,6 +118,9 @@ This command is the classic for loop. You define the name of the temporary varia
 {"if": [-variable_a-, "-type_of_comparison-", "variable_b-", "true", "-command_to_execute-", "false", "-command_to_execute-]}
 This command is the conditional statement, allowing you to determine if a variable is true ("=="), false, or not. The `!="` operator determines whether a condition is greater than (>), less than (<), greater than or equal to (>=), or less than or equal to (<=") another variable. A command is executed if the condition is met (the `true` parameter) or false if it is not. If you don't want anything to be executed if the condition is met or not, use `["ignore"]` as the parameter for whether the condition is met or not (depending on your case). If you want more than one command to be executed if the condition is met or not, you must put all the commands inside square brackets.
 
+{"function": ["-function_name-"]}
+This allows you to execute functions. Replace -function_name- with the name of the function you want to execute.
+
 ## We finish with the commands
 
 Images, buttons, and videos will be placed one on top of the other depending on which one was created first (editing is not taken into account for this). If command "x" is written before command "z" (as long as they are images, videos, buttons, text, ebooks, etc., otherwise, for example, if it's a teleport, the screen is cleared and the video/menu to which the teleport sends is displayed). The "z" command will be above the "x" command in the display.
@@ -126,7 +136,7 @@ File "metadata.json"
 Example content:
 ```json
 {
-    "mavm_version": "v.4.0.0",
+    "mavm_version": "v.4.1.0",
     "description": {
         "text": "example description"
         "duration": 3
@@ -173,6 +183,13 @@ despues esta
 -comandos-
 ]
 donde los comandos se ejecutan en bucle permanente hasta cerrar el video o cambiar el menu
+
+"functions": {
+    "-nombre_de_la_funcion-": [
+        -comandos-
+    ]
+}
+para crear funciones
 
 {"menu": ["create", -nombre_del_menu-]}
 este comando crea el contenedor del menu
@@ -260,6 +277,9 @@ este comando es el clasico bucle for, estableces el nombre de la variable tempor
 {"if": [-variable_a-,-tipo_de_comparacion-,-variable_b-, "true",-comando_a_ejecutar-, "false",-comando_a_ejecutar-]}
 este comando es el condicional pudiendo determinar si una variable es ("==), no es "!=", o es mayor (">"), menor "(<"), mayor o igual (">=) o menor o igual ("<=") a otra variable y ejecutando un comando si se cumple (el parametro "true") o si no se cumple (el parametro "false") si no quieres que se ejcute nada en el caso de que se cumpla y/o no se cumpla la condicion pon un ["ignore"] como parametro de si se cumple o no se cumple (dependiendo tu caso) y si quieres que se ejcute mas de un comando si se cumple o no se cumple la condicion debes poner todos los comandos dentro de un []
 
+{"function": ["-nombre_de_la_funcion-"]}
+permite ejecutar funciones, se reemplaza -nombre_de_la_funcion- por el nombre de la funcion que quieres ejecutar
+
 ## finalizamos con los comandos
 
 las imagenes, botones y videos se pondran uno encima del otro dependiendo de cual este escrita su creacion primero (no se toma en cuenta la edicion para eso) si "x" comando se escribe antes que "z" comando (siempre y cuando sean imagenes, videos, botones, texto, ebook, etc, en caso contrario, por ejemplo sea un teleport se limpia la pantalla y se muestra el video/menu al que mando el teleport) "z" comando estara arriba de "x" comando en la visualizacion
@@ -276,7 +296,7 @@ archivo "metadata.json"
 contenido ejemplo:
 ```json
 {
-    "mavm_version": "v.4.0.0",
+    "mavm_version": "v.4.1.0",
     "description": {
         "text": "example description"
         "duration": 3
