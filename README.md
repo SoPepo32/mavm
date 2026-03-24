@@ -119,7 +119,8 @@ This command is the classic for loop. You define the name of the temporary varia
 This command is the conditional statement, allowing you to determine if a variable is true ("=="), false, or not. The `!="` operator determines whether a condition is greater than (>), less than (<), greater than or equal to (>=), or less than or equal to (<=") another variable. A command is executed if the condition is met (the `true` parameter) or false if it is not. If you don't want anything to be executed if the condition is met or not, use `["ignore"]` as the parameter for whether the condition is met or not (depending on your case). If you want more than one command to be executed if the condition is met or not, you must put all the commands inside square brackets.
 
 {"function": ["-function_name-"]}
-This allows you to execute functions. Replace -function_name- with the name of the function you want to execute.
+This command allows you to execute functions; replace `-function_name-` with the name of the function you want to execute.
+This is another command that runs outside of a menu or script, like the `time` command.
 
 ## We finish with the commands
 
@@ -279,6 +280,7 @@ este comando es el condicional pudiendo determinar si una variable es ("==), no 
 
 {"function": ["-nombre_de_la_funcion-"]}
 permite ejecutar funciones, se reemplaza -nombre_de_la_funcion- por el nombre de la funcion que quieres ejecutar
+este es otro comando que se ejecuta fuera de un menu o script, como el comando time
 
 ## finalizamos con los comandos
 
