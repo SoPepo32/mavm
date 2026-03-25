@@ -79,7 +79,7 @@ This command is used to create text.
 {"text":["edit", -id_of_text_to_edit- "coordinates", -start_x_axis_coordinates-, -start_y_axis_coordinates-, -end_x_axis_coordinates-, -end_y_axis_coordinates-, "text", -text-]}
 This command is used to edit text.
 
-{"ebook": ["create/edit", -page_id-, "epub_path", -epub_name_with_the_extension-, "chapter", -epub_chapter_to_import-, "coordinates", [ -start_x_coordinate-, -start_y_coordinate-, -end_x_coordinate-, -end_y_coordinate-]]}
+{"ebook": ["create/edit", -chapter_image_id-, "epub_path", -epub_name_with_the_extension-, "chapter", -epub_chapter_to_import-, "coordinates", [ -start_x_coordinate-, -start_y_coordinate-, -end_x_coordinate-, -end_y_coordinate-]]}
 This command allows you to import a chapter from an epub and place it as an image in the menu.
 
 {"script": ["create", -script_name-]}
@@ -234,7 +234,7 @@ este comando sirve para crear un texto
 {"text":["edit",-id_del_texto_a_editar- "coordinates",-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-, "text",-texto-]}
 este comando sirve para editar un texto
 
-{"ebook": ["create/edit",-id_de_la_pagina-, "epub_path",-nombre_del_epub_con_la_extencion-, "chapter",-capitulo_del_epub_a_importar-, "coordinates",[-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-]]}
+{"ebook": ["create/edit",-id_de_la_imagen_de_capitulo-, "epub_path",-nombre_del_epub_con_la_extencion-, "chapter",-capitulo_del_epub_a_importar-, "coordinates",[-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-]]}
 este comando permite importar un capitulo de un epub y ponerla como una imagen en el menu
 
 {"script": ["create", -nombre_del_script-]}
