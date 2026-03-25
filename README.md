@@ -79,8 +79,8 @@ This command is used to create text.
 {"text":["edit", -id_of_text_to_edit- "coordinates", -start_x_axis_coordinates-, -start_y_axis_coordinates-, -end_x_axis_coordinates-, -end_y_axis_coordinates-, "text", -text-]}
 This command is used to edit text.
 
-{"ebook": ["create/edit", -page_id-, "epub_path", -epub_name_with_the_extension-, "page", -epub_page_to_import-, "coordinates", [ -start_x_coordinate-, -start_y_coordinate-, -end_x_coordinate-, -end_y_coordinate-]]}
-This command allows you to import a page from an epub and place it as an image in the menu.
+{"ebook": ["create/edit", -page_id-, "epub_path", -epub_name_with_the_extension-, "chapter", -epub_chapter_to_import-, "coordinates", [ -start_x_coordinate-, -start_y_coordinate-, -end_x_coordinate-, -end_y_coordinate-]]}
+This command allows you to import a chapter from an epub and place it as an image in the menu.
 
 {"script": ["create", -script_name-]}
 This command allows you to create a script within a menu and is written without {-menu_name-: [-command-]}, just like the time command.
@@ -111,7 +111,7 @@ This command allows you to store values ​​between two numbers in a variable.
 
 {"folder_contents": ["folder", -folder_to_read_contents-, "output_variable", -output_variable-]}
 This command allows you to obtain The contents of the project's main folder (using "/" for the "folder" parameter) or a folder within a .tar file (using the .tar logic defined later) are then placed into a previously defined variable as a list.
-
+ebook
 {"for": [["temporary_variable_for_output", "-variable_temporary", "content_list_variable", "-list_of_content_to_pass_through_the_temporary_variable-], [-commands_to_execute]]}
 This command is the classic for loop. You define the name of the temporary variable (which doesn't need to be predefined), the variable containing the list to be passed, and the commands to execute.
 
@@ -137,7 +137,7 @@ File "metadata.json"
 Example content:
 ```json
 {
-    "mavm_version": "v.4.1.0",
+    "mavm_version": "v.4.1.1",
     "description": {
         "text": "example description"
         "duration": 3
@@ -234,8 +234,8 @@ este comando sirve para crear un texto
 {"text":["edit",-id_del_texto_a_editar- "coordinates",-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-, "text",-texto-]}
 este comando sirve para editar un texto
 
-{"ebook": ["create/edit",-id_de_la_pagina-, "epub_path",-nombre_del_epub_con_la_extencion-, "page",-pagina_del_epub_a_importar-, "coordinates",[-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-]]}
-este comando permite importar una pagina de un epub y ponerla como una imagen en el menu
+{"ebook": ["create/edit",-id_de_la_pagina-, "epub_path",-nombre_del_epub_con_la_extencion-, "chapter",-capitulo_del_epub_a_importar-, "coordinates",[-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-]]}
+este comando permite importar un capitulo de un epub y ponerla como una imagen en el menu
 
 {"script": ["create", -nombre_del_script-]}
 este comando permite crear un script dentro de un menu y se pone sin {-nombre_del_menu-: [-comando-]} al igual que el comando time
@@ -298,7 +298,7 @@ archivo "metadata.json"
 contenido ejemplo:
 ```json
 {
-    "mavm_version": "v.4.1.0",
+    "mavm_version": "v.4.1.1",
     "description": {
         "text": "example description"
         "duration": 3
