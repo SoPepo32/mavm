@@ -16,14 +16,12 @@ The default execution file is start.json, located within the file with the .mavm
 ```
 and repeats for each file
 
-## The menu commands are (Every time you write a command, you must include all parameters unless it is specified that the parameter is optional):
+## The labels:
 
 "start": [
 -commands-
 ]
 where the commands are executed when the video starts.
-
-Then there is:
 
 "loop": [
 -commands-
@@ -36,6 +34,11 @@ where the commands are executed in a continuous loop until the video closes or t
     ]
 }
 To create functions
+
+"type": "-file_type-"
+which indicates the file type, whether it's a menu or a library, "lib" for libraries and "menu" for menus
+
+## The menu commands are (Every time you write a command, you must include all parameters unless it is specified that the parameter is optional):
 
 {"menu": ["create", -menu_name-]}
 This command creates the menu container.
@@ -118,9 +121,16 @@ This command is the classic for loop. You define the name of the temporary varia
 {"if": [-variable_a-, "-type_of_comparison-", "variable_b-", "true", "-command_to_execute-", "false", "-command_to_execute-]}
 This command is the conditional statement, allowing you to determine if a variable is true ("=="), false, or not. The `!="` operator determines whether a condition is greater than (>), less than (<), greater than or equal to (>=), or less than or equal to (<=") another variable. A command is executed if the condition is met (the `true` parameter) or false if it is not. If you don't want anything to be executed if the condition is met or not, use `["ignore"]` as the parameter for whether the condition is met or not (depending on your case). If you want more than one command to be executed if the condition is met or not, you must put all the commands inside square brackets.
 
-{"function": ["-function_name-"]}
+{"function": ["run","-function_name-"]}
 This command allows you to execute functions; replace `-function_name-` with the name of the function you want to execute.
 This is another command that runs outside of a menu or script, like the `time` command.
+
+{"function": ["run","-library_id-:-function_name-", "scripts2extract",[-script_name(s)_to_extract-]]}
+This allows you to execute functions from a library. Replace -function_name- with the name of the function you want to execute, -library_id- with the library's ID, and -script_name(s)_to_extract- with the script(s) you want to extract from the library function (this is only available for library functions, and using the "scripts2extract" argument is optional).
+This is another command that is executed outside of a menu or script, like the `time` command.
+
+{"import": ["-library_file-;-library_id-"]}
+This command allows you to import a library. Replace "-library_file-" with the name of the library file and "-library_id-" with the library's ID to execute its functions. This is another command that is executed outside of a menu or script, like the `time` command.
 
 ## We finish with the commands
 
@@ -137,9 +147,9 @@ File "metadata.json"
 Example content:
 ```json
 {
-    "mavm_version": "v.4.1.1",
+    "mavm_version": "v.4.2.0",
     "description": {
-        "text": "example description"
+        "text": "example description",
         "duration": 3
     }
 }
@@ -171,14 +181,12 @@ El archivo de ejecución predeterminado es start.json, ubicado dentro del archiv
 ```
 y se repite para cada archivo
 
-## los comandos de los menus son (cada que escribas un comando debes poner todos los parametros a no ser que se especifique que el parametro es opcional):
+## las etiquetas:
 
 "start": [
 -comandos-
 ]
 donde se ejecutan los comandos al iniciar el video
-
-despues esta
 
 "loop":[
 -comandos-
@@ -191,6 +199,11 @@ donde los comandos se ejecutan en bucle permanente hasta cerrar el video o cambi
     ]
 }
 para crear funciones
+
+"type": "-tipo_de_archivo-"
+que indica el tipo de archivo, si es un menu o una libreria, "lib" para librerias y "menu" para menus
+
+## los comandos de los menus son (cada que escribas un comando debes poner todos los parametros a no ser que se especifique que el parametro es opcional):
 
 {"menu": ["create", -nombre_del_menu-]}
 este comando crea el contenedor del menu
@@ -278,8 +291,16 @@ este comando es el clasico bucle for, estableces el nombre de la variable tempor
 {"if": [-variable_a-,-tipo_de_comparacion-,-variable_b-, "true",-comando_a_ejecutar-, "false",-comando_a_ejecutar-]}
 este comando es el condicional pudiendo determinar si una variable es ("==), no es "!=", o es mayor (">"), menor "(<"), mayor o igual (">=) o menor o igual ("<=") a otra variable y ejecutando un comando si se cumple (el parametro "true") o si no se cumple (el parametro "false") si no quieres que se ejcute nada en el caso de que se cumpla y/o no se cumpla la condicion pon un ["ignore"] como parametro de si se cumple o no se cumple (dependiendo tu caso) y si quieres que se ejcute mas de un comando si se cumple o no se cumple la condicion debes poner todos los comandos dentro de un []
 
-{"function": ["-nombre_de_la_funcion-"]}
+{"function": ["run","-nombre_de_la_funcion-"]}
 permite ejecutar funciones, se reemplaza -nombre_de_la_funcion- por el nombre de la funcion que quieres ejecutar
+este es otro comando que se ejecuta fuera de un menu o script, como el comando time
+
+{"function": ["run","-id_de_la_biblioteca-:-nombre_de_la_funcion-", "scripts2extract",[-nombre/s_del/del_los_script/s_a_extraer-]]}
+permite ejecutar funciones de una libreria, se reemplaza -nombre_de_la_funcion- por el nombre de la funcion que quieres ejecutar, -id_de_la_biblioteca- con el id de la libreria y -nombre/s_del/del_los_script/s_a_extraer- por el o los scripts que quieras extraer de la funcion de la libreria (esto solo esta disponi8ble para funciones de librerias y es opcional usar el argumento "scripts2extract")
+este es otro comando que se ejecuta fuera de un menu o script, como el comando time
+
+{"import": ["-archivo_de_la_biblioteca-;-id_de_la_biblioteca-"]}
+este comando permite importar una biblioteca, se remplaza -archivo_de_la_biblioteca- por el nombre del archivo de la biblioteca e -id_de_la_biblioteca- por el id de la biblioteca para ejecutar sus funciones
 este es otro comando que se ejecuta fuera de un menu o script, como el comando time
 
 ## finalizamos con los comandos
@@ -298,9 +319,9 @@ archivo "metadata.json"
 contenido ejemplo:
 ```json
 {
-    "mavm_version": "v.4.1.1",
+    "mavm_version": "v.4.2.0",
     "description": {
-        "text": "example description"
+        "text": "example description",
         "duration": 3
     }
 }
