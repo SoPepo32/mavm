@@ -150,7 +150,7 @@ File "metadata.json"
 Example content:
 ```json
 {
-    "mavm_version": "v.4.2.0",
+    "mavm_version": "v.4.3.0",
     "description": {
         "text": "example description",
         "duration": 3
@@ -325,7 +325,7 @@ archivo "metadata.json"
 contenido ejemplo:
 ```json
 {
-    "mavm_version": "v.4.2.0",
+    "mavm_version": "v.4.3.0",
     "description": {
         "text": "example description",
         "duration": 3
