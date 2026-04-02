@@ -41,7 +41,7 @@ which indicates the file type, whether it's a menu or a library, "lib" for libra
 ## The menu commands are (Every time you write a command, you must include all parameters unless it is specified that the parameter is optional):
 
 {"menu": ["create", -menu_name-]}
-This command creates the menu container.
+This command creates the menu container; it's universal throughout the menu. Whether it's menu functions or imported libraries, all those running within the same menu have access to this command.
 
 {-menu_name-: [-command-]}
 This indicates that the command inside the square brackets [] will be executed.
@@ -86,7 +86,7 @@ This command is used to edit text.
 This command allows you to import a chapter from an epub and place it as an image in the menu.
 
 {"script": ["create", -script_name-]}
-This command allows you to create a script within a menu and is written without {-menu_name-: [-command-]}, just like the time command.
+Like the `time` command, this command is universal, but only within the JSON file in which it exists. If you import a library, it will not have access to the script.
 
 ## Let's move on to script commands (each time you write a command you must include all parameters unless it is specified that the parameter is optional):
 
@@ -206,7 +206,7 @@ que indica el tipo de archivo, si es un menu o una libreria, "lib" para libreria
 ## los comandos de los menus son (cada que escribas un comando debes poner todos los parametros a no ser que se especifique que el parametro es opcional):
 
 {"menu": ["create", -nombre_del_menu-]}
-este comando crea el contenedor del menu
+este comando crea el contenedor del menu, este es universal en todo el menu, sea en las funciones del menu o las bibliotecas que importes todos si se ejecutan en el mismo menu tienen acceso a este comando
 
 {-nombre_del_menu-: [-comando-]}
 esto indica que el comando se va a ejecutar que va dentro de los de los []
@@ -251,7 +251,7 @@ este comando sirve para editar un texto
 este comando permite importar un capitulo de un epub y ponerla como una imagen en el menu
 
 {"script": ["create", -nombre_del_script-]}
-este comando permite crear un script dentro de un menu y se pone sin {-nombre_del_menu-: [-comando-]} al igual que el comando time
+este comando permite crear un script dentro de un menu y se pone sin {-nombre_del_menu-: [-comando-]} al igual que el comando time, este comando es universal pero solo en el json en el que existe, si importas una biblioteca esta no tendra acceso al script
 
 ## pasamos a los comandos de los scripts (cada que escribas un comando debes poner todos los parametros a no ser que se especifique que el parametro es opcional):
 
