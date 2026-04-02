@@ -85,6 +85,9 @@ This command is used to edit text.
 {"ebook": ["create/edit", -chapter_image_id-, "epub_path", -epub_name_with_the_extension-, "chapter", -epub_chapter_to_import-, "coordinates", [ -start_x_coordinate-, -start_y_coordinate-, -end_x_coordinate-, -end_y_coordinate-]]}
 This command allows you to import a chapter from an epub and place it as an image in the menu.
 
+[{"polygon": ["-create/edit-","-id_of_polygon-", "coordinates",[[-coordinates_x_point_1-,-coordinates_y_point_1-],[-coordinates_x_point_2-,-coordinates_y_point_2-],[-coordinates_x_point_3-,-coordinates_y_point_3-]...], "color",[-color_rgb_red-,-color_rgb_green-,-color_rgb_blue-]]}]
+This command allows you to create polygons. There is no maximum number of vertices, and the vertices are drawn clockwise.
+
 {"script": ["create", -script_name-]}
 Like the `time` command, this command is universal, but only within the JSON file in which it exists. If you import a library, it will not have access to the script.
 
@@ -249,6 +252,9 @@ este comando sirve para editar un texto
 
 {"ebook": ["create/edit",-id_de_la_imagen_de_capitulo-, "epub_path",-nombre_del_epub_con_la_extencion-, "chapter",-capitulo_del_epub_a_importar-, "coordinates",[-cordenada_eje_x_inicio-,-cordenada_eje_y_inicio-,-cordenada_eje_x_fin-,-cordenada_eje_y_fin-]]}
 este comando permite importar un capitulo de un epub y ponerla como una imagen en el menu
+
+[{"polygon": ["-create/edit-","-id_del_poligono-", "coordinates",[[-cordenadas_x_punto_1-,-cordenadas_y_punto_1-],[-cordenadas_x_punto_2-,-cordenadas_y_punto_2-],[-cordenadas_x_punto_3-,-cordenadas_y_punto_3-]...], "color",[-color_rgb_rojo-,-color_rgb_verde-,-color_rgb_azul-]]}]
+este comando permite crear poligonos, no hay un numero maximo de vertices, los vertices se dibujan en sentido horario
 
 {"script": ["create", -nombre_del_script-]}
 este comando permite crear un script dentro de un menu y se pone sin {-nombre_del_menu-: [-comando-]} al igual que el comando time, este comando es universal pero solo en el json en el que existe, si importas una biblioteca esta no tendra acceso al script
